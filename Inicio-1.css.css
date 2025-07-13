@@ -163,3 +163,87 @@ footer {
   from { opacity: 0; transform: translateY(-10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+@media (max-width: 768px) {
+  body {
+    padding: 0 10px;
+  }
+
+  .site-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .main-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .main-nav a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background-color: black;
+    border: 2px solid #39ff14;
+    color: #39ff14;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+
+  .main-nav a.active {
+    background-color: #39ff14;
+    color: black;
+  }
+
+  .whatsapp-btn {
+    position: static !important;
+    width: 100%;
+    background-color: #39ff14;
+    color: black;
+    font-weight: bold;
+  }
+
+  .productos-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .producto {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .producto img {
+    width: 100%;
+    height: auto;
+  }
+
+  .filtros {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .filtros input,
+  .filtros select {
+    width: 100%;
+    padding: 10px;
+  }
+
+  h1,
+  h2,
+  p {
+    text-align: center;
+  }
+}
