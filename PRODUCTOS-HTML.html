@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Productos – Apex</title>
+  <link rel="stylesheet" href="PRODUCTOS-CSS.css" />
+  <style>
+    .producto.oculto { display: none; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <a href="INICIO-HTML.html">
+        <img src="file:///D:/lab.%20aplicaciones/Pagina%20web-%20laschicas/logo-apex-final.jpeg" alt="Logo" />
+      </a>
+    </div>
+
+    <nav class="main-nav">
+      <a href="INICIO-HTML.html">Inicio</a>
+      <a href="PRODUCTOS-HTML.html" class="active">Productos</a>
+      <a href="#" id="ver-carrito">Carrito (<span id="contador-carrito">0</span>)</a>
+      <a href="CONTACTO-HTML.html" class="whatsapp-btn">Contáctanos</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="titulo">Nuestros Productos</h1>
+
+    <!-- FILTROS Y BÚSQUEDA FUNCIONAL -->
+    <section class="filtros">
+      <h2>Buscar productos</h2>
+      <input type="text" id="busqueda" placeholder="Buscar por nombre..." />
+  <button onclick="filtrarProductos()">Filtrar</button>
+      <select id="categoria">
+        <option value="">Todas las categorías</option>
+        <option value="remeras">Remeras</option>
+        <option value="buzos">Buzos</option>
+        <option value="camperas">Camperas</option>
+        <option value="pantalones">Pantalones</option>
+      </select>
+
+    
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="productos-grid" id="productos">
+      <div class="producto" data-nombre="Remera Verde" data-categoria="remeras">
+        <img src="https://via.placeholder.com/300x300?text=Producto+1" alt="Producto 1" />
+        <h2>Remera Verde</h2>
+        <p class="precio">$5500</p>
+        <button class="agregar-carrito" data-nombre="Remera Verde" data-precio="5500">Agregar al carrito</button>
+      </div>
+
+      <div class="producto" data-nombre="Buzo Negro" data-categoria="buzos">
+        <img src="https://via.placeholder.com/300x300?text=Producto+2" alt="Producto 2" />
+        <h2>Buzo Negro</h2>
+        <p class="precio">$8700</p>
+        <button class="agregar-carrito" data-nombre="Buzo Negro" data-precio="8700">Agregar al carrito</button>
+      </div>
+
+      <div class="producto" data-nombre="Campera Fluor" data-categoria="camperas">
+        <img src="https://via.placeholder.com/300x300?text=Campera" alt="Producto 3" />
+        <h2>Campera Fluor</h2>
+        <p class="precio">$12.000</p>
+        <button class="agregar-carrito" data-nombre="Campera Fluor" data-precio="12000">Agregar al carrito</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal/carrito -->
+  <div id="modal-carrito" class="modal">
+    <div class="modal-contenido">
+      <h2>Carrito</h2>
+      <ul id="lista-carrito"></ul>
+      <p id="total">Total: $0</p>
+      <button id="vaciar-carrito">Vaciar carrito</button>
+      <button id="cerrar-carrito">Cerrar</button>
+    </div>
+  </div>
+
+  <script src="CARRITO-JAVA.js"></script>
+
+  <!-- SCRIPT FILTRO FUNCIONAL -->
+  <script>
+    function filtrarProductos() {
+      const texto = document.getElementById("busqueda").value.toLowerCase();
+      const categoria = document.getElementById("categoria").value;
+
+      document.querySelectorAll(".producto").forEach(prod => {
+        const nombre = prod.dataset.nombre.toLowerCase();
+        const cat = prod.dataset.categoria;
+        const coincideTexto = nombre.includes(texto);
+        const coincideCategoria = !categoria || categoria === cat;
+
+        if (coincideTexto && coincideCategoria) {
+          prod.classList.remove("oculto");
+        } else {
+          prod.classList.add("oculto");
+        }
+      });
+    }
+  </script>
+</body>
+</html>
