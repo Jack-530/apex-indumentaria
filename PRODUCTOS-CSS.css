@@ -40,17 +40,6 @@ body {
   border-radius: 5px;
 }
 
-.whatsapp-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #25d366;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  position: relative;
-}
-
-
 .titulo {
   margin: 30px 0 10px;
   font-size: 2.2em;
@@ -136,22 +125,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Botón carrito */
-.agregar-carrito {
-  background-color: #39ff14;
-  color: #000;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.agregar-carrito:hover {
-  background-color: #2aff00;
-  transform: scale(1.05);
-}
 
 /* Modal carrito */
 .modal {
@@ -200,15 +173,17 @@ body {
 
 @media (max-width: 768px) {
   body {
-    font-size: 16px;
-    padding: 10px;
+  
+     width: 100%;
   }
 
-  .site-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+.site-header {
+  background-color: var(--fondo);
+  padding: 20px 0;
+  border-bottom: 2px solid var(--verde);
+  animation: fadeIn 1s ease;
+}
+
 
   .main-nav {
     flex-direction: column;
@@ -237,3 +212,27 @@ body {
     margin-top: 10px;
   }
 }
+
+.ver-carrito {
+  width: 200px;
+  height: auto;
+  border: 2px solid #39ff14;
+  border-radius: 4px;
+}
+
+hr{
+  background-color: var(--verde);
+  width: 100%;
+}
+
+.inicio-marco {
+  border: 3px solid var(--verde);
+  margin: 70px auto;
+  padding: 80px;
+  width: 90%;
+  max-width: 900px;
+  border-radius: 10px;
+  background-color: #111;
+  animation: fadeIn 1.5s ease;
+}
+
