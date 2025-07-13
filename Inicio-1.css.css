@@ -166,7 +166,7 @@ footer {
 
 @media (max-width: 768px) {
   body {
-    padding: 0 10px;
+     width: 100%;
   }
 
   .site-header {
@@ -199,10 +199,7 @@ footer {
     text-decoration: none;
   }
 
-  .main-nav a.active {
-    background-color: #39ff14;
-    color: black;
-  }
+
 
   .whatsapp-btn {
     position: static !important;
